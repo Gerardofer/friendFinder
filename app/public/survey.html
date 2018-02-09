@@ -205,10 +205,31 @@
 
     <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
-    <script type="text/javaScript">
+    <script>
+        $(".btn").on("click", function() {
+            console.log("This works");
+            var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim()
+            }
+            console.log(newFriend);
+        });
+        // console.log(newFriend);
 
-        function runSurveyQuery() { var currentURL = window.location.origin; $.ajax({ url: currentURL + "/api/friends", method: "GET" }) .done(function (surveyData){ console.log("-------------------------------------"); console.log("URL: " + currentURL + "/api/tables");
-        console.log("-------------------------------------"); console.log(surveyData); console.log("-------------------------------------"); }) } runSurveyQuery();
+        function runSurveyQuery() {
+            var currentURL = window.location.origin;
+            $.ajax({
+                url: currentURL + "/api/friends",
+                method: "GET"
+            }).done(function(surveyData) {
+                console.log("-------------------------------------");
+                console.log("URL: " + currentURL + "/api/tables");
+                console.log("-------------------------------------");
+                console.log(surveyData);
+                console.log("-------------------------------------");
+            })
+        };
+        runSurveyQuery();
     </script>
 
 </body>
