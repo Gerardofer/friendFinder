@@ -240,7 +240,7 @@
                 $(".modal-body").append("<img src='" + friendsData[0].photo + "'>");
             });
         }
-        function postMatch(){
+        
             $(".btn").on("click", function() {
                 event.preventDefault();
                 console.log("This works");
@@ -255,19 +255,19 @@
                 })
                 
                 console.log(newFriend);
-                console.log("type of scores is", typeof(newFriend.scores))
-
-                $.post(currentURL + "api/friends", newFriend, (data) => {
+                console.log("type of scores is", typeof(newFriend.scores));
+                console.log('posting to', currentURL + "/api/friends");
+                $.post(currentURL + "/api/friends", newFriend, (data) => {
                     if (data){
                         alert("We are looking for your match")
                     }
                     $("name").val("");
                     $("photo").val("");                
-                })
+                });
             });
-        }
-        runFriendQuery();
-        postMatch();
+        
+        // runFriendQuery();
+        
         
     </script>
 
