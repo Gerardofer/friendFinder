@@ -1,7 +1,7 @@
 const express = require("express");
-const path = require("path");
+const bodyParser = require('body-parser');
+
 const app = express();
-var bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 8080;
 
@@ -9,7 +9,7 @@ require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse application/json
 app.use(bodyParser.json())
