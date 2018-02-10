@@ -249,10 +249,13 @@
                     photo: $("#photo").val().trim(),
                     scores: $(".question option:selected").text().split("")
                 }
-                // for (var i = 0; i < 11; i++){
-
-                // }
+                newFriend.scores.forEach((number)=>{
+                    console.log(number);
+                    // newFriend.scores = parseInt(number);
+                })
+                
                 console.log(newFriend);
+                console.log("type of scores is", typeof(newFriend.scores))
 
                 $.post(currentURL + "api/friends", newFriend, (data) => {
                     if (data){
