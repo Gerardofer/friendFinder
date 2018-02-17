@@ -1,6 +1,6 @@
 # friendFinder
 
-Is a application to find the best friend match for you.  After answering a few questions, the app will search through its data base (hosted in the server) and determine who the best match is.  
+Is an application to find the best friend match for you.  After answering a few questions, the app will search through its data base (hosted in the server) and determine who the best match is.  
 
 ### Here are a few images
 
